@@ -27,6 +27,7 @@ import { SubscriptionsComponent } from './components/admin/subscriptions/subscri
 import { AddAdminComponent } from './components/admin/add-admin/add-admin.component';
 import { AddServiceComponent } from './components/admin/add-service/add-service.component';
 import { MessageComponent } from './components/admin/message/message.component';
+import { CustomModalComponent } from './components/Company-service/custom-modal/custom-modal.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { MessageComponent } from './components/admin/message/message.component';
     AddAdminComponent,
     AddServiceComponent,
     MessageComponent,
+    CustomModalComponent,
 
   ],
   imports: [

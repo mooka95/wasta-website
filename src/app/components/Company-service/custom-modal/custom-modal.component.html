@@ -1,0 +1,37 @@
+
+
+<div class="container-fluid">
+    <div class="modal-img">
+    <img src="./assets/wasta__logo.png"/>
+</div>
+
+<div class="alert alert-danger center-text" role="alert" *ngIf="errorMessage" style="font-size: 2.4rem;padding: 2rem 0;">
+{{errorMessage}}
+</div>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="form-group ">
+      <label for="email" class="form-group__label">Email address</label>
+      <input type="email" class="form-control form-group__input" id="email"  placeholder="Enter email"  formControlName="email">
+    </div>
+    <div class="form-group">
+      <label for="name" class="form-group__label"> FullName</label>
+      <input type="text" class="form-control form-group__input" id="name" placeholder="FullName"  formControlName="fullName">
+    </div>
+
+    <div class="form-group">
+        <label for="phone" class="form-group__label"> PhoneNumber</label>
+        <input type="number" class="form-control form-group__input" id="phone" placeholder="PhoneNumber"  formControlName="phoneNumber">
+      </div>
+      <div class="form-group">
+        <label for="description" class="form-group__label"> Service Description</label>
+        <input type="text" class="form-control form-group__input" id="description" placeholder="Custom Service"  formControlName="description">
+      </div>
+      <div class="form-group">
+        <label for="price" class="form-group__label"> price</label>
+        <input type="number" class="form-control form-group__input" id="phone" placeholder="price"  formControlName="price">
+      </div>
+      <div class="submit">
+    <button type="submit" class="btn submit__btn submit__btn-yellow" [disabled]="profileForm.invalid">Subscribe</button>
+</div>
+  </form>
+</div>

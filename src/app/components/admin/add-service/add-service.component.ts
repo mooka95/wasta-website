@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 export class AddServiceComponent implements OnInit,OnDestroy {
   subscription:Subscription;
   addServiceForm:FormGroup;
+  message:string
   constructor(private companyService:CompanyServicesService) { }
   
 
@@ -26,7 +27,7 @@ export class AddServiceComponent implements OnInit,OnDestroy {
   onSubmit(){
     this.subscription=this.companyService.addService(this.addServiceForm.value).subscribe(
       (response)=>{
-        console.log(response)
+     this.message=response['message'];
 
       },(err)=>{
         console.log(err)
@@ -34,6 +35,7 @@ export class AddServiceComponent implements OnInit,OnDestroy {
 
       
     )
+    this.addServiceForm.reset();
   
   }
 

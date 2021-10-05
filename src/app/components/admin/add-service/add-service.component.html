@@ -3,13 +3,16 @@
     <div class="card" style="width: 50%;margin-left: 10rem;">
         
         <div class="card-body">
+          <div class="alert alert-success center-text" role="alert" *ngIf='message'  style="font-size: 2.4rem;">
+           {{message}}
+          </div>
             <form  [formGroup]="addServiceForm" (ngSubmit)="onSubmit()">
                 <div class="form-group ">
                   <label for="title" class="form-group__label">Title</label>
                   <input type="text" class="form-control form-group__input" id="title"  placeholder="Enter Title"formControlName="title" >
             </div>
             <div class="form-group ">
-                <label for="description" class="form-group__label">Title</label>
+                <label for="description" class="form-group__label">Description</label>
                 <input type="text" class="form-control form-group__input" id="description"  placeholder="Description" formControlName="description">
           </div>
 
