@@ -1,3 +1,4 @@
+import { ServiceImpl } from './../Model/service-impl';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -5,8 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-  // private data: BehaviorSubject<any> = new BehaviorSubject<any>(null);
-  // data$: Observable<any> = this.data.asObservable();
+  
   private service:any;
   private serviceId:any;
 
@@ -20,5 +20,12 @@ export class SharedService {
   getServiceId(){
 
     return this.serviceId;
+  }
+  setService(service:ServiceImpl){
+     this.service=service;
+
+  }
+  getService(){
+    return this.service;
   }
 }

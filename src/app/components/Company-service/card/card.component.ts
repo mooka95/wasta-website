@@ -17,6 +17,7 @@ export class CardComponent implements OnInit {
     console.log(this.companyServices);
   }
   navigateToDetailsPage(serviceCompany:ServiceImpl){
+    this.sharedService.setService(serviceCompany);
     this.router.navigate([`/service/${serviceCompany._id}`]);
 
 

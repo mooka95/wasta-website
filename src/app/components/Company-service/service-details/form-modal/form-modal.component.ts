@@ -15,7 +15,7 @@ export class FormModalComponent implements OnInit,OnDestroy {
   subscription:Subscription;
   profileForm:FormGroup;
   client:Client;
-  error:Error;
+  errorMessage:string;
   constructor(private clientService:ClientService,private route: ActivatedRoute,private sharedService:SharedService) { }
  
 
@@ -30,17 +30,18 @@ export class FormModalComponent implements OnInit,OnDestroy {
   onSubmit(){
     console.log( this.profileForm.value) ;
     this.client=this.profileForm.value;
-    this.client.subscribedServiceId=this.sharedService.getServiceId();
+    this.client.subscribedService=this.sharedService.getService();
    this.subscription= this.clientService.saveClientSubscription(this.client).subscribe(
       (response)=>{
         console.log(response);
       },
       (err)=>{
-        // if(err.statu==='Conflict')
-        
-        // err.statusText='Y'
+        if(err.statusText==='Conflict'){
+          this.errorMessage='You already subscribed to this service';
+  
+        }
        
-         console.log(err['message']);
+       
       }
     )
 

@@ -17,7 +17,7 @@ import { ServiceDetailsComponent } from './components/Company-service/service-de
 import { NgbModule,NgbCarousel, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormModalComponent } from './components/Company-service/service-details/form-modal/form-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CarouselComponent } from './components/Home/carousel/carousel.component';
+
 import { OfferedServicesComponent } from './components/Home/offered-services/offered-services.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { AdminComponent } from './components/admin/admin.component';
@@ -42,7 +42,6 @@ import { MessageComponent } from './components/admin/message/message.component';
     NotFoundComponent,
     ServiceDetailsComponent,
     FormModalComponent,
-    CarouselComponent,
     OfferedServicesComponent,
     AdminComponent,
     AdminLoginComponent,

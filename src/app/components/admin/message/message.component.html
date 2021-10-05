@@ -1,1 +1,33 @@
-<p>message works!</p>
+<div class="container-fluid">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Email Address</th>
+        <th scope="col">Client Question</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let client of clients; index as i"  >
+          
+        <th scope="row" >{{ i + 1 }}</th>
+        <td >
+          {{ client.fullName }}
+        </td>
+        <td >{{ client.phoneNumber  }}</td>
+        <td >{{ client.email  }}</td>
+        <td >
+            <ul *ngFor="let service of client.question ">
+               <li> {{service }}</li>  
+                  
+           </ul>
+          
+        
+        
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    </div>

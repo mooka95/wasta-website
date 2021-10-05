@@ -2,6 +2,7 @@ import { CompanyServicesService } from './../../../Services/company-services.ser
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ServiceImpl } from 'src/app/Model/service-impl';
 import { Subscription } from 'rxjs';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-company-service',
@@ -9,6 +10,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./company-service.component.scss']
 })
 export class CompanyServiceComponent implements OnInit ,OnDestroy{
+  customServiceForm:FormGroup;
   public Services:any;
   private subscription:Subscription;
 
@@ -18,6 +20,15 @@ export class CompanyServiceComponent implements OnInit ,OnDestroy{
 
 
   ngOnInit(): void {
+
+    this.customServiceForm=new FormGroup({
+      'serviceName':new FormControl('',Validators.required),
+      
+      'price':new FormControl('',[Validators.required])
+
+    })
+
+
   this.subscription=  this.companyService.getServices().subscribe(
 
     (response)=>{
@@ -36,6 +47,9 @@ export class CompanyServiceComponent implements OnInit ,OnDestroy{
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
     
+  }
+  onSubmit(){
+
   }
 
 }

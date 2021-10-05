@@ -12,16 +12,16 @@
   <tbody>
   <tr *ngFor="let client of clients; index as i"  >
       
-    <th scope="row" *ngIf="client.subscribedServiceId.length>0">{{ i + 1 }}</th>
-    <td *ngIf="client.subscribedServiceId.length>0">
+    <th scope="row" >{{ i + 1 }}</th>
+    <td >
       {{ client.fullName }}
     </td>
-    <td *ngIf="client.subscribedServiceId.length>0">{{ client.phoneNumber  }}</td>
-    <td *ngIf="client.subscribedServiceId.length>0">{{ client.email  }}</td>
-    <td *ngIf="client.subscribedServiceId.length>0">
-        <ul>
-           <li> {{client.subscribedServiceId[0] }}</li>  
-           <li>{{client?.subscribedServiceId[1] }}</li>       
+    <td >{{ client.phoneNumber  }}</td>
+    <td >{{ client.email  }}</td>
+    <td >
+        <ul *ngFor="let service of client.subscribedService ">
+           <li> {{service.title }}</li>  
+              
        </ul>
       
     

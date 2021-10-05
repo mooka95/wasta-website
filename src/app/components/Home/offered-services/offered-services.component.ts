@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ServiceImpl } from './../../../Model/service-impl';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +13,7 @@ export class OfferedServicesComponent implements OnInit {
    services:ServiceImpl[]=[];
   subscription:Subscription;
 
-  constructor(private companyService:CompanyServicesService) { }
+  constructor(private companyService:CompanyServicesService, private router:Router) { }
 
   ngOnInit(): void {
     this.subscription=this.companyService.getServices().subscribe(
@@ -25,6 +26,10 @@ export class OfferedServicesComponent implements OnInit {
         console.log(err);
       }
     )
+  }
+  navigateToService(service:ServiceImpl){
+      this.router.navigateByUrl(`service/${service._id}`)
+
   }
 
 }
