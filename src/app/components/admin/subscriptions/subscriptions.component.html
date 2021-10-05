@@ -1,0 +1,33 @@
+<div class="container-fluid">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Full Name</th>
+    <th scope="col">Phone Number</th>
+    <th scope="col">Email Address</th>
+    <th scope="col">Service Subscription</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let client of clients; index as i"  >
+      
+    <th scope="row" *ngIf="client.subscribedServiceId.length>0">{{ i + 1 }}</th>
+    <td *ngIf="client.subscribedServiceId.length>0">
+      {{ client.fullName }}
+    </td>
+    <td *ngIf="client.subscribedServiceId.length>0">{{ client.phoneNumber  }}</td>
+    <td *ngIf="client.subscribedServiceId.length>0">{{ client.email  }}</td>
+    <td *ngIf="client.subscribedServiceId.length>0">
+        <ul>
+           <li> {{client.subscribedServiceId[0] }}</li>  
+           <li>{{client?.subscribedServiceId[1] }}</li>       
+       </ul>
+      
+    
+    
+    </td>
+  </tr>
+  </tbody>
+</table>
+</div>

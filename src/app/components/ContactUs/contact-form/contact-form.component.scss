@@ -1,0 +1,70 @@
+label{
+    font-size: 1.6rem;
+    padding-left: 1rem;
+}
+input{
+    font-size: 1.3rem;
+    border-radius: 5rem;
+    padding-left: 2rem;
+    outline: none;
+}
+textarea{
+    font-size: 1.3rem;
+
+}
+.submit{
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    &__btn{
+       
+        font-size: 1.3rem;
+        color: white;
+        padding: 1.5rem 4rem;
+        transition: all .2s;
+        border: none;   
+        display: inline-block;
+        width: 40%;
+        text-transform: uppercase;
+        border-radius: 10rem;
+        position: relative;
+        
+    }
+    &__btn::after{
+        content: '';
+        width: 100%;
+        height: 100%;
+         border-radius: 100px; 
+         display: inline-block; 
+         position: absolute;
+         top: 0px;
+         left: 0px;
+         z-index: -1; 
+         transition: all .4s;
+
+    }
+    &__btn:hover{
+        transform: translateY(-0.3rem); 
+        box-shadow: 0 10px 20px rgba(black,0.2) ;
+        &::after{
+            transform: scale(1.5);
+            opacity: 0;
+        }
+
+
+    }
+    &__btn-yellow{
+        background-color: #fdb52d;
+        &::after{
+            background-color: #fdb52d;
+        }
+
+    }
+}
+.ng-invalid .ng-touched {
+    border: 2px solid red ;
+
+}
+.ng-touched  .ng-valid{
+    border: 2px solid green ;
+}

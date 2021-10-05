@@ -1,0 +1,27 @@
+
+
+<div class="container-fluid">
+    <div class="modal-img">
+    <img src="./assets/wasta__logo.png"/>
+</div>
+
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="form-group ">
+      <label for="email" class="form-group__label">Email address</label>
+      <input type="email" class="form-control form-group__input" id="email"  placeholder="Enter email"  formControlName="email">
+    </div>
+    <div class="form-group">
+      <label for="name" class="form-group__label"> FullName</label>
+      <input type="text" class="form-control form-group__input" id="name" placeholder="FullName"  formControlName="fullName">
+    </div>
+
+    <div class="form-group">
+        <label for="phone" class="form-group__label"> PhoneNumber</label>
+        <input type="number" class="form-control form-group__input" id="phone" placeholder="PhoneNumber"  formControlName="phoneNumber">
+      </div>
+      <div class="submit">
+    <button type="submit" class="btn submit__btn submit__btn-yellow" [disabled]="profileForm.invalid">Submit</button>
+</div>
+  </form>
+</div>

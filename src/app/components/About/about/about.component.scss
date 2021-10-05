@@ -1,0 +1,66 @@
+
+@use "../../../Styles/mixines" as mi; 
+
+
+.container{
+
+  @include mi.respond (phone){
+       width: 100%;
+       margin: 0;
+       padding: 0;
+}
+
+}
+.heading {
+    background-color: rgb(253, 181, 45);
+  color: white;
+    margin-top: 2rem;
+    padding: 5rem;
+    & h1{
+        font-size: 6.5rem;
+    }
+    &__desc{
+        font-size: 2.4rem;
+    }
+}
+
+ section{
+    background-color:   rgba(128, 128, 128, 0.801);
+    color: white;
+    &:not(:last-child){
+        border-bottom: solid #ededed;
+    }
+}
+.about-section{
+    padding: 2rem;
+
+  
+    &__title{
+        font-size: 4.2rem;
+        color:white;
+        padding: 5rem 0; 
+        animation:moveInLeft 3s;
+    }
+
+    &__description-paragraph{
+        padding-top: 1.6rem;
+        font-size: 1.7rem;
+        margin-bottom: 2.5rem;
+        color:white;
+        animation: moveInRight 3s;
+
+    }
+}
+
+.callus{
+    background-color: rgb(253, 181, 45);
+    margin-bottom: 2.5rem;
+    &__btn{
+        font-size:3.5rem;
+        font-weight: 300;
+        color: white;
+    
+
+    }
+ 
+}

@@ -1,0 +1,21 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="phonenumber" >Number</label>
+        <input type="number" class="form-control" id="phonenumber" formControlName="phoneNumber">
+      </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" aria-describedby="emailHelp" formControlName="fullName">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" formControlName="email">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Leave Question ?</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"formControlName="question"></textarea>
+      </div>
+       <div class="submit">
+    <button type="submit" class="btn submit__btn submit__btn-yellow" [disabled]="contactForm.invalid">Submit</button>
+</div>
+  </form>
