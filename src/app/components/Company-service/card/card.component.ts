@@ -20,7 +20,7 @@ export class CardComponent implements OnInit {
   }
   navigateToDetailsPage(serviceCompany:ServiceImpl){
     this.sharedService.setService(serviceCompany);
-    if(serviceCompany._id==='615c937eaec1401dc4124279'){
+    if(serviceCompany._id==='615ce3a00675d9de6c6d1f4e'){
       this.modalService.open(CustomModalComponent);
      
     }
