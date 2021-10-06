@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL:'https://wasta-app.herokuapp.com'
+  API_URL: "https://wasta-app.herokuapp.com"
 };
 
 /*
