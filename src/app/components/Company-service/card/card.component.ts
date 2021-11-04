@@ -18,7 +18,7 @@ export class CardComponent implements OnInit {
   constructor( private router: Router,private sharedService:SharedService ,public modalService: NgbModal) { }
 
   ngOnInit(): void {
-  this.image= `/${environment.API_URL+this.companyServices.imageUrl}`
+  this.image= `${environment.API_URL} / ${this.companyServices.imageUrl}`
   }
   navigateToDetailsPage(serviceCompany:ServiceImpl){
     this.sharedService.setService(serviceCompany);
