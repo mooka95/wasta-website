@@ -25,7 +25,7 @@ export class ServiceDetailsComponent implements OnInit {
     this.companyService.getServiceFromId(id).subscribe(
       res=>{
         this.serviceDetail=res["service"];
-        this.image= `${environment.API_URL}/${res.imageUrl}`
+        this.image= `${environment.API_URL}/${res["service"].imageUrl}`
       },
       (err)=>{
           console.log(err)
