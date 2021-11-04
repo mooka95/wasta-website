@@ -1,3 +1,4 @@
+import { environment } from './../../../../environments/environment';
 import { CustomModalComponent } from './../custom-modal/custom-modal.component';
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
@@ -12,11 +13,12 @@ import { SharedService } from 'src/app/Services/shared.service';
 })
 export class CardComponent implements OnInit {
   @Input() companyServices : ServiceImpl ;
+  image:String;
 
   constructor( private router: Router,private sharedService:SharedService ,public modalService: NgbModal) { }
 
   ngOnInit(): void {
-    console.log(this.companyServices);
+  this.image= `${environment.API_URL+this.companyServices.imageUrl}`
   }
   navigateToDetailsPage(serviceCompany:ServiceImpl){
     this.sharedService.setService(serviceCompany);
