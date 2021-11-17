@@ -22,16 +22,12 @@ export class CardComponent implements OnInit {
   }
   navigateToDetailsPage(serviceCompany:ServiceImpl){
     this.sharedService.setService(serviceCompany);
-    if(serviceCompany._id==='615ce3a00675d9de6c6d1f4e'){
-      this.modalService.open(CustomModalComponent);
-     
-    }
-    else{   
-      this.router.navigate([`/service/${serviceCompany._id}`]);}
+    console.log(this.router.navigateByUrl)
+      this.router.navigate([`/services/${serviceCompany._id}`]);}
 
 
 
 
-  }
+
 
 }

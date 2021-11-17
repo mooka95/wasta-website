@@ -14,13 +14,7 @@ export class SideBarComponent implements OnInit {
   ngOnInit(): void {
   }
   logout(){
-    let sure=confirm("Proceed in Logout ?");
-    if(sure){
-      this.adminService.logout();
-      this.router.navigateByUrl('admin/login')
-    }
-
-
+  this.router.navigate(['/admin/login']);     
   }
 
 }

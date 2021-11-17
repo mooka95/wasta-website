@@ -30,7 +30,7 @@ export class AdminLoginComponent implements OnInit {
      (response)=>{
        if(response['admin'].token){
         localStorage.setItem('token',response['admin'].token);
-        this.router.navigateByUrl('/admin')
+        this.router.navigateByUrl('admin/Home')
 
 
        }

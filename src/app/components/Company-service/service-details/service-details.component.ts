@@ -10,34 +10,34 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-service-details',
   templateUrl: './service-details.component.html',
-  styleUrls: ['./service-details.component.scss']
+  styleUrls: ['./service-details.component.scss'],
 })
 export class ServiceDetailsComponent implements OnInit {
- serviceDetail:ServiceImpl;
- image:string
+  serviceDetail: ServiceImpl;
+  image: string;
 
-  constructor(private sharedService:SharedService,private route: ActivatedRoute,private companyService:CompanyServicesService,public modalService: NgbModal) { }
+  constructor(
+    private sharedService: SharedService,
+    private route: ActivatedRoute,
+    private companyService: CompanyServicesService,
+    public modalService: NgbModal
+  ) {}
 
   ngOnInit(): void {
-  
     const id = this.route.snapshot.paramMap.get('id');
     this.sharedService.setServiceId(id);
     this.companyService.getServiceFromId(id).subscribe(
-      res=>{
-        this.serviceDetail=res["service"];
-        this.image= `${environment.API_URL}/${res["service"].imageUrl}`
+      (res) => {
+        this.serviceDetail = res['service'];
+        this.image = `${environment.API_URL}/${res['service'].imageUrl}`;
       },
-      (err)=>{
-          console.log(err)
+      (err) => {
+        console.log(err);
       }
     );
-   
-
-
   }
 
-  openModal(){
-     this.modalService.open(FormModalComponent);
+  openModal() {
+    this.modalService.open(FormModalComponent);
   }
-
 }

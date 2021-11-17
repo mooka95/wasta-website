@@ -13,8 +13,8 @@ export class AdminGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       const isLogged=this.adminService.isLoggedIn();
       if(!isLogged){
-     alert(" You Must Login First ");
-      this.router.navigateByUrl('admin/login')
+      alert(" You Must Login First ");
+      this.router.navigateByUrl('admin')
       }
       return isLogged;
  

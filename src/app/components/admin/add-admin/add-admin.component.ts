@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 export class AddAdminComponent implements OnInit,OnDestroy {
   subscription:Subscription
   adminForm:FormGroup;
+  errorMessage:string ;
 
   constructor(private adminService:AdminService) { }
   ngOnDestroy(): void {
@@ -31,7 +32,9 @@ export class AddAdminComponent implements OnInit,OnDestroy {
           console.log(response)
       },
       (err)=>{
-        console.log(err)
+        
+        console.log(err.error.message)
+        this.errorMessage=err.error.message;
       }
     );
     this.adminForm.reset();

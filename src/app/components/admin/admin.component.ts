@@ -11,14 +11,20 @@ export class AdminComponent implements OnInit ,OnDestroy{
 
   constructor(private adminService:AdminService,private router:Router) { }
   ngOnDestroy(): void {
-    let sure=confirm("Proceed in Logout ?");
-    if(sure){
-      this.adminService.logout();
+
       this.router.navigateByUrl('admin/login')
-    }
+  
   }
 
   ngOnInit(): void {
   }
+  canExit() : boolean {
+ 
+    if (confirm("Do you want to logout")) {
+        return true
+      } else {
+        return false
+      }
+    }
 
 }

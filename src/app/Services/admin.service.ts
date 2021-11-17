@@ -15,15 +15,14 @@ export class AdminService {
 
   constructor( private http:HttpClient) { }
   addAdmin(admin:AdminImpl):Observable<AdminImpl>{
-
-    return this.http.post<AdminImpl>(`${environment.API_URL}/admin`,admin);
-
+    return this.http.post<AdminImpl>(`${environment.API_URL}/admin`,admin,{headers:this.headers});
   }
   login(admin:AdminImpl):Observable<AdminImpl>{
+    console.log(this.headers)
     return this.http.post<AdminImpl>(`${environment.API_URL}/admin/login`,admin);
   }
   logout(){
-    localStorage.removeItem('token')
+    localStorage.removeItem('token');
   }
 
   isLoggedIn():boolean{

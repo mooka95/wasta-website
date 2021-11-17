@@ -1,5 +1,5 @@
 form{
-    padding: 7rem  5rem;
+    padding: 4rem  5rem;
     
 }
 .ng-invalid .ng-touched {
@@ -14,13 +14,11 @@ form{
     &__input{
 
         font-size: 1.5rem;
-        padding: 1.5rem 2rem;
+        padding: 0.5rem 2rem;
         border-radius: 1.5rem;
         display: block;
-        transition: all .3s;
-     
-      
 
+        transition: all .3s;
         &::-webkit-input-placeholder {
             color:#fdb52d ;
         }
@@ -93,9 +91,15 @@ form{
 }
 
 .card{
-    box-shadow: 2px 2px 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 .container{
     display: flex;
     justify-content: center;
+}
+.error-message{
+    border-radius: 1.5rem;
+    font-size: 1.5rem;
+    margin-top:1rem;
+    animation: moveDownNear 1s;
 }
