@@ -36,21 +36,21 @@
             placeholder="Password"
             formControlName="password"
           />
-          <div
-            *ngIf="
-              adminForm.get('password').invalid &&
-              (
-                adminForm.get('password').touched)
-            "
-            class="alert alert-danger error-message"
-          >
-            <div *ngIf="adminForm.get('password').errors.required">
-              Password is required.
-            </div>
-            <div *ngIf="adminForm.get('password').errors.minlength">
-              password must be at least 5 characters
-            </div>
+        <div
+          *ngIf="
+            adminForm.get('password').invalid &&
+            (
+              adminForm.get('password').touched)
+          "
+          class="alert alert-danger error-message"
+        >
+          <div *ngIf="adminForm.get('password').errors.required">
+            Password is required.
           </div>
+          <div *ngIf="adminForm.get('password').errors.minlength">
+            password must be at least 5 characters
+          </div>
+        </div>
         </div>
 
         <div class="submit">

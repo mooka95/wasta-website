@@ -100,3 +100,10 @@ form{
     display: flex;
     justify-content: center;
 }
+
+.error-message{
+    border-radius: 1.5rem;
+    font-size: 1.5rem;
+    margin-top:1rem;
+    animation: moveDownNear 1s;
+}

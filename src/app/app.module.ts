@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { OfferedServicesComponent } from './components/Home/offered-services/offered-services.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { CustomModalComponent } from './components/Company-service/custom-modal/custom-modal.component';
+import { CompanyServiceModule } from './components/Company-service/company-service.module';
 
 
 
@@ -27,7 +28,8 @@ import { CustomModalComponent } from './components/Company-service/custom-modal/
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule ,
-    IvyCarouselModule
+    IvyCarouselModule,
+    CompanyServiceModule
     
 
   ],

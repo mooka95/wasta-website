@@ -8,11 +8,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ClientService {
-  headers= new HttpHeaders()
-  .set('authorization', localStorage.getItem('token'))
+
 
   constructor(private http:HttpClient) { }
-
+  getHeaders(){
+    let   headers=  new HttpHeaders().set('authorization', localStorage.getItem('token'));
+      return headers;
+  }
   saveClientSubscription(client:Client):Observable<string>{
     
     return this.http.put<string>(`${environment.API_URL}/client`,client);
@@ -23,7 +25,7 @@ export class ClientService {
     return this.http.put<string>(`${environment.API_URL}/client`,client);
   }
   getAllClients():Observable<Client>{
-    return this.http.get<Client>(`${environment.API_URL}/client/allclients`,{ 'headers': this.headers });
+    return this.http.get<Client>(`${environment.API_URL}/client/allclients`,{ 'headers':  this.getHeaders() });
 
   }
 }

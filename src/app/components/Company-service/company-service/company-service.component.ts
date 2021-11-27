@@ -13,6 +13,7 @@ export class CompanyServiceComponent implements OnInit ,OnDestroy{
   customServiceForm:FormGroup;
   public Services:any;
   private subscription:Subscription;
+  isLoading:boolean=true;
 
   constructor(private companyService:CompanyServicesService) { 
    
@@ -32,20 +33,20 @@ export class CompanyServiceComponent implements OnInit ,OnDestroy{
   this.subscription=  this.companyService.getServices().subscribe(
 
     (response)=>{
-   
+     this.isLoading=false;
      this.Services=response['services'];
+    
     
     },
     (err)=>{
-      console.log(err);
-
+      this.isLoading=false;
     }
 
   );
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.subscription?.unsubscribe();
     
   }
   onSubmit(){

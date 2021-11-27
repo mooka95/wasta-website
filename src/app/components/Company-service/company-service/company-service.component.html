@@ -1,7 +1,11 @@
-<div class="container">
+<div class="container" >
+  <div *ngIf="isLoading" style="height:70Vh ;display:flex;justify-content:center;align-items:center">
+    <app-spinner ></app-spinner>
+  </div>
+
   <div class="row">
     <div class="col-12 col-xl-4" *ngFor="let service of Services">
-        <app-loading-spinner></app-loading-spinner>
+        
       <app-card [companyServices]="service"></app-card>
       
     </div>

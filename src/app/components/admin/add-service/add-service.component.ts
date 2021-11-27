@@ -19,7 +19,7 @@ export class AddServiceComponent implements OnInit,OnDestroy {
     this.addServiceForm=new FormGroup({
       'title':new FormControl('',[Validators.required]),
       'description':new FormControl('',[Validators.required]),
-      'price': new FormControl(0,[Validators.required,Validators.min(0)]),
+      'price': new FormControl('',[Validators.required,Validators.min(0)]),
       'imageUrl':new FormControl('',[Validators.required])
 
     })

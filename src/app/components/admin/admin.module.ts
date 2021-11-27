@@ -12,14 +12,15 @@ import { MessageComponent } from './message/message.component';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { CanExitGuard } from 'src/app/Services/can-exit.guard';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { AuthnticationGuard } from 'src/app/Services/authntication.guard';
 
 const routes: Routes = [
  {path:'login',component:AdminLoginComponent},
- {path:'Home',component:AdminComponent,canActivate:[AdminGuard],canDeactivate:[CanExitGuard],children:[
- {path:'AddAdmin',component:AddAdminComponent},
- {path:'AddService',component:AddServiceComponent},
- {path:'subscription',component: SubscriptionsComponent},
- {path:'message',component:MessageComponent},
+ {path:'Home',component:AdminComponent,children:[
+ {path:'AddAdmin',component:AddAdminComponent,canActivate:[AdminGuard]},
+ {path:'AddService',component:AddServiceComponent,canActivate:[AdminGuard]},
+ {path:'subscription',component: SubscriptionsComponent,canActivate:[AdminGuard]},
+ {path:'message',component:MessageComponent,canActivate:[AdminGuard]},
  {path:'',redirectTo:'subscription',pathMatch:'full'}
  ]},
  {path:'',redirectTo:'login',pathMatch:'full'}
@@ -33,13 +34,17 @@ const routes: Routes = [
     MessageComponent,
     AddServiceComponent,
     AddAdminComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    LoadingSpinnerComponent
   ],
   imports: [  
   CommonModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes)
    
+  ],
+  exports: [
+    LoadingSpinnerComponent
   ]
 
 })

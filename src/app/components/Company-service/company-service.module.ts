@@ -8,6 +8,7 @@ import { CardComponent } from './card/card.component';
 import { ServiceDetailsComponent } from './service-details/service-details.component';
 import { FormModalComponent } from './service-details/form-modal/form-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 
 const routes:Routes = [
@@ -21,13 +22,15 @@ const routes:Routes = [
     CompanyServiceComponent,
     CardComponent,
     ServiceDetailsComponent,
-    FormModalComponent
+    FormModalComponent,
+    SpinnerComponent
 
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    ReactiveFormsModule,
-  ]
+    ReactiveFormsModule
+  ],
+  exports: [SpinnerComponent]
 })
 export class CompanyServiceModule { }

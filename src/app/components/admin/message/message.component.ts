@@ -19,7 +19,6 @@ export class MessageComponent implements OnInit {
   ngOnInit(): void {
     this.subscription=this.clientService.getAllClients().subscribe(
       (response)=>{
-        console.log(response)
         this.clients=response['clients'].filter(  client=>{return client.question.length>0});
         console.log(this.clients)
 

@@ -3,17 +3,46 @@
     <div class="card" style="width: 50rem;">
 
         <div class="card-body">
-            <div class="alert alert-danger center-text" role="alert"  style="font-size: 2.4rem;margin-top: 2rem;padding: 5rem;margin-bottom: 0rem;" *ngIf="error">
+            <div class="alert alert-danger center-text" role="alert"  style="font-size: 2.4rem;margin-top: 1.5rem;padding: 5rem;margin-bottom: 0rem;" *ngIf="error">
                 {{error}}
               </div>
             <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <div class="form-group ">
                   <label for="email" class="form-group__label">Email address</label>
                   <input type="email" class="form-control form-group__input" id="email"  placeholder="Enter email"  formControlName="email" >
+                  <div
+                  *ngIf="
+                    loginForm.get('email').invalid &&
+                    ( loginForm.get('email').touched)
+                  "
+                  class="alert alert-danger error-message"
+                >
+                  <div *ngIf="loginForm.get('email').errors.required">
+                    Email is required.
+                  </div>
+                  <div *ngIf="loginForm.get('email').errors.email">
+                    Input must be email
+                  </div>
+                </div>
             </div>
                 <div class="form-group">
                   <label for="name" class="form-group__label"> Password </label>
                   <input type="password" class="form-control form-group__input" id="name" placeholder="Password" formControlName="password">
+                  <div
+                  *ngIf="
+                    loginForm.get('password').invalid &&
+                    (
+                      loginForm.get('password').touched)
+                  "
+                  class="alert alert-danger error-message"
+                >
+                  <div *ngIf="loginForm.get('password').errors.required">
+                    Password is required.
+                  </div>
+                  <div *ngIf="loginForm.get('password').errors.minlength">
+                    password must be at least 5 characters
+                  </div>
+                </div>
                </div>
             
                

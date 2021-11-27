@@ -68,3 +68,9 @@ textarea{
 .ng-touched  .ng-valid{
     border: 2px solid green ;
 }
+.error-message{
+    border-radius: 1.5rem;
+    font-size: 1.5rem;
+    margin-top:1rem;
+    animation: moveDownNear 1s;
+}

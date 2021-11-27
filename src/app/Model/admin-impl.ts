@@ -1,5 +1,5 @@
 export interface AdminImpl {
     email:String,
-    password:String,
+    password?:String,
     token?:string
 }

@@ -11,7 +11,7 @@ export class AdminComponent implements OnInit ,OnDestroy{
 
   constructor(private adminService:AdminService,private router:Router) { }
   ngOnDestroy(): void {
-
+     this.adminService.logout();
       this.router.navigateByUrl('admin/login')
   
   }
